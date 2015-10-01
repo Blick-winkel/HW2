@@ -17,7 +17,7 @@ load_dump()
 
 def find_articles():
     titles = []
-    words = open('article_names.txt', 'w', encoding = 'utf-8')
+    art = open('article_names.txt', 'w', encoding = 'utf-8')
     lang = input('Введите код языка: ')
     lang = lang + 'wiki-'
     names = glob.glob('*.xml')
@@ -31,8 +31,9 @@ def find_articles():
                     titles.append(i)
     titles = (sorted(titles))
     for title in titles:
-        words.write(title + '\r\n')
-
+        art.write(title + '\r\n')
+    f.close()
+    art.close()
 
 
 
